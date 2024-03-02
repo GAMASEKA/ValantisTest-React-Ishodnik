@@ -1,38 +1,208 @@
-.App {
-  text-align: center;
+.body {
+    margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+    background-color: #87cefa;
+    padding: 20px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.title {
+    font-size: 40px;
+}
+
+.section {
+    background-color: white;
+    padding: 50px 30px 0 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-block {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.aside-block {
+    border: 1px solid black;
+    padding: 5px;
+    background-color: #87cefa;
+    max-height: 600px;
+    border-radius: 30px;
+}
+
+.aside-menu {
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid b;
+    padding: 10px;
+    border-radius: 30px;
+
+}
+
+.aside-btn {
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: blue;
+      border-radius: 10rem;
+      z-index: -2;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: darken($color, 15%);
+      transition: all .3s;
+      border-radius: 10rem;
+      z-index: -1;
+    }
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
   }
+
+  .form-field {
+    margin-bottom: 20px;
+    display: block;
+    padding: 8px 16px;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 6px;
+    -webkit-appearance: none;
+    color: var(--input-color);
+    border: 1px solid lightblue;
+    background: var(--input-background);
+    transition: border .3s ease;
+    &::placeholder {
+        color: grey;
+    }
+    &:focus {
+        outline: none;
+        border-color: var(--input-border-focus);
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card {
+    background-color: gray;
+    margin-right: 10px;
+    margin-bottom: 25px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 30px
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.card-title {
+    background-color: gray;
+    color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5vmin;
+    font-weight: 900;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.price {
+    margin: 24px 0;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.price sub,
+.price sup {
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.pricetag {
+    white-space: nowrap;
+    position: relative;
+    margin: 0 5px 0 10px;
+    displaY: inline-block;
+    height: 25px;
+    border-radius: 0 5px 5px 0;
+    padding: 0 25px 0 15px;
+    background: #E8EDF0;
+    border: 0 solid #C7D2D4;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    color: #999;
+    line-height: 23px;
+}
+
+.pricetag:after {
+    position: absolute;
+    right: 0;
+    margin: 1px 7px;
+    font-weight: bold;
+    font-size: 19px;
+    content: "\00D7";
+}
+
+.pricetag:before {
+    position: absolute;
+    content: "\25CF";
+    color: white;
+    text-shadow: 0 0 1px #333;
+    font-size: 11px;
+    line-height: 0px;
+    text-indent: 12px;
+    left: -15px;
+    width: 1px;
+    height: 0px;
+    border-right: 14px solid #E8EDF0;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+}
+
+
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #87cefa;
+}
+
+.pagination {
+    list-style-type: none;
+}
+
+.page-link {
+    color: black;
+    text-decoration: none;
+}
+
+.page-link__active {
+    color: red;
+    font-size: 30px;
+    text-decoration: none;
 }
